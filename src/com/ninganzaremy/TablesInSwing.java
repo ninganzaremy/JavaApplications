@@ -31,22 +31,33 @@ public class TablesInSwing {
 	}
 	class TableData extends AbstractTableModel {
 
+		int [][]  allData = new int[3][3];
+		
+		private static final long serialVersionUID = -5670273263235110464L;
+		public TableData() {
+			allData[0] = new int[] {1,2,3};
+			allData[1] = new int[] {4,5,6};
+			allData[2] = new int[] {7,8,9};
+
+
+		}
+
 		@Override
 		public int getRowCount() {
 			// TODO Auto-generated method stub
-			return 10;
+			return allData.length;
 		}
 
 		@Override
 		public int getColumnCount() {
 			// TODO Auto-generated method stub
-			return 10;
+			return allData[0].length;
 		}
 
 		@Override
 		public Object getValueAt(int rowIndex, int columnIndex) {
 			// TODO Auto-generated method stub
-			return "Hello";
+			return allData[rowIndex][columnIndex];
 		}};
 
 	/**
